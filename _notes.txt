@@ -1,0 +1,29 @@
+#-------------------------------------------------------------------------------------------
+#  GitHub git repo
+#-------------------------------------------------------------------------------------------
+
+1st thing you need to do is create a new repo on github.com
+
+Repository Path:
+https://github.com/BJSebastian/advent_of_code.git
+
+Create a new repository on the command line
+$ echo "# advent_of_code" >> README.md
+$ git init
+$ git add README.md
+$ git commit -m "first commit"
+$ git remote add origin https://github.com/BJSebastian/advent_of_code.git
+$ git push -u origin master
+
+Push an existing repository from the command line
+$ git remote add origin https://github.com/BJSebastian/advent_of_code.git
+$ git push -u origin master
+
+Show Remote Branches
+$ git branch -r
+
+Show All Branches (local and remote)
+$ git branch -a
+This should return something like:
+* master
+  remotes/origin/master
