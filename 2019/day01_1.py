@@ -7,7 +7,7 @@ import math
 def fuel_counter_upper(mass):
 
   # Specifically, to find the fuel required for a module, take its mass, divide by three,
-  fuel_required = mass / 3;
+  fuel_required = mass / 3
 
   # round down,
   fuel_required = math.floor(fuel_required)
