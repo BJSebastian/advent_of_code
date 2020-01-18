@@ -1,6 +1,5 @@
 #===========================================================================================
 # --- Day 2: 1202 Program Alarm ---
-# --- Part One ---
 #===========================================================================================
 
 def process_intcodes(intcodes):
@@ -10,16 +9,8 @@ def process_intcodes(intcodes):
   parm2 = 0
   parm3 = 0
   
-  # for debugging test scenarios...
-  # print('----------------------------')
-
   for _ in intcodes[::4]:
     opcode = intcodes[instruction_pointer]
-
-    # for debugging...
-    # opcode_command = "unknown"
-    # snapshot = intcodes.copy()
-    # print(f'Opcode is: {opcode}')
 
     if (int(opcode) == 1 or int(opcode) == 2):
       parm1 = int(intcodes[instruction_pointer+1])
@@ -27,35 +18,13 @@ def process_intcodes(intcodes):
       parm3 = int(intcodes[instruction_pointer+3])
 
     if int(opcode) == 1:
-      # opcode_command = "add"
       intcodes[parm3] = int(intcodes[parm1]) + int(intcodes[parm2])
     elif int(opcode) == 2:
-      # opcode_command = "multiply"
       intcodes[parm3] = int(intcodes[parm1]) * int(intcodes[parm2])
     elif int(opcode) == 99:
-      # opcode_command = "program finished"
-      print("program finished!")
-      print('----------------------------')
       break
 
-    # testing input parsing...
-    # if (int(opcode) == 1 or int(opcode) == 2):
-    #   print(f'Opcode Command at position {instruction_pointer} is: {opcode_command} ' + 
-    #     f'position: {parm1} ' + 
-    #     f'with position: {parm2} ' + 
-    #     f'and save the value at position: {parm3}')
-    # else: 
-    #   print(f'Opcode Command at position {instruction_pointer} is: {opcode_command}')
-
-    # for debugging test scenarios...
-    # print(f'before: {snapshot}')
-    # print(f' after: {intcodes}')
-    # print('----------------------------')
-
     instruction_pointer += 4
-    
-    # if int(opcode) == 99:
-    #   break
 
   return intcodes
 
@@ -69,18 +38,19 @@ def main():
   # print(process_intcodes(test))
 
   # open the file.
-  with open('day02.txt', 'r') as file:
+  with open('input02.txt', 'r') as file:
     data = file.read()
     intcodes = data.split(",")
 
     # --- Part One ---
-    # # before running the program, replace position 1 with the value 12 
-    # # and replace position 2 with the value 2.
-    # intcodes[1] = 12
-    # intcodes[2] = 2
-    # program_output = process_intcodes(intcodes)
-    # # What value is left at position 0 after the program halts?
-    # print(f'Value at position 0: {program_output[0]}')
+    # before running the program, replace position 1 with the value 12 
+    # and replace position 2 with the value 2.
+    intcodes[1] = 12
+    intcodes[2] = 2
+    program_output = process_intcodes(intcodes)
+    
+    # What value is left at position 0 after the program halts?
+    print(f'Value at position 0: {program_output[0]}')
 
     # --- Part Two ---
     output_found = False
@@ -91,11 +61,11 @@ def main():
         intcodes[2] = y
         program_output = process_intcodes(intcodes)
         # What value is left at position 0 after the program halts?
-        print(f'Value at position 0 for noun/verb: {x}/{y}' + 
-          f' {program_output[0]} ' +
-          f' Answer: {100 * x + y}')
         if program_output[0] == 19690720:
           output_found = True
+          print(f'Value at position 0 for noun/verb: {x}/{y}' + 
+            f' {program_output[0]} ' +
+            f' Answer: {100 * x + y}')
           break
       
       if output_found:

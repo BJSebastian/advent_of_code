@@ -28,6 +28,9 @@ This should return something like:
 * master
   remotes/origin/master
 
+Tell Git not to track a file any more (remove from repo)
+https://alvinalexander.com/git/git-rm-file-git-repository-dont-track-accidentally-added
+
 #===========================================================================================
 #  Useful Links
 #===========================================================================================
@@ -57,10 +60,13 @@ for i in mylist[1::2]:
 # prints 2 4 6 8 10
 
 #-------------------------------------------------------------------------------------------
-#  Python naming conventions.
+#  Python
 #-------------------------------------------------------------------------------------------
 
-from:
+Python Tips & Tricks for the Advent of Code 2019
+https://medium.com/@danvdk/python-tips-tricks-for-the-advent-of-code-2019-89ec23a595dd
+
+Python naming conventions
 https://www.python.org/dev/peps/pep-0008/#naming-conventions
 
 Function and Variable Names
@@ -68,8 +74,20 @@ Function names should be lowercase, with words separated by underscores as neces
 
 Variable names follow the same convention as function names.
 
-#  Python - Basic Operators.
+Basic Operators
 https://www.tutorialspoint.com/python/python_basic_operators.htm
 
-#  Python - How to clone or copy a list?
+How to clone or copy a list?
 https://stackoverflow.com/questions/2612802/how-to-clone-or-copy-a-list
+
+How to define a two-dimensional array in Python
+https://stackoverflow.com/questions/6667201/how-to-define-a-two-dimensional-array-in-python
+
+Two-dimensional lists (arrays)
+https://snakify.org/en/lessons/two_dimensional_lists_arrays/
+
+Find length of 2D array Python
+https://stackoverflow.com/questions/10713004/find-length-of-2d-array-python
+
+Python program to print the elements of an array in reverse order
+https://www.javatpoint.com/python-program-to-print-the-elements-of-an-array-in-reverse-order

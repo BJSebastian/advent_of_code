@@ -34,7 +34,7 @@ def main():
   total_fuel_requirement = 0
 
   # open the file.
-  file_to_process = open("day01.txt","r")
+  file_to_process = open("input01.txt","r")
 
   # process all lines in the file
   for mass in file_to_process:

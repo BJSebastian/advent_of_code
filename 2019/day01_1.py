@@ -29,7 +29,7 @@ def main():
   total_fuel_requirement = 0
 
   try:
-    file_name = "day01.txt"
+    file_name = "input01.txt"
 
     # open the file.
     file_to_process = open(file_name,"r")
