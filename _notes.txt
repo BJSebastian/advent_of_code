@@ -91,3 +91,22 @@ https://stackoverflow.com/questions/10713004/find-length-of-2d-array-python
 
 Python program to print the elements of an array in reverse order
 https://www.javatpoint.com/python-program-to-print-the-elements-of-an-array-in-reverse-order
+
+Python Dictionaries
+https://www.w3schools.com/python/python_dictionaries.asp
+
+#-------------------------------------------------------------------------------------------
+#  Javascript
+#-------------------------------------------------------------------------------------------
+
+** Reading a File Line by Line in Node.js
+https://stackabuse.com/reading-a-file-line-by-line-in-node-js/
+
+Using `for await` to read lines from a file
+https://medium.com/@wietsevenema/node-js-using-for-await-to-read-lines-from-a-file-ead1f4dd8c6f
+
+Javascript | Program to read text File
+https://www.geeksforgeeks.org/javascript-program-to-read-text-file/
+
+Confused by Node.js readline on() method
+https://stackoverflow.com/questions/33689501/confused-by-node-js-readline-on-method
