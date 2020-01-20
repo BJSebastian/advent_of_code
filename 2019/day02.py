@@ -24,6 +24,8 @@ def process_intcodes(intcodes):
       intcodes[parm3] = int(intcodes[parm1]) * int(intcodes[parm2])
     elif int(opcode) == 99:
       break
+    else:
+      print("Unknown opcode encountered")
 
     instruction_pointer += 4
 
@@ -57,6 +59,7 @@ def main():
     output_found = False
     for x in range(99):
       for y in range(99):
+        # reset the data.
         intcodes = data.split(",")
         intcodes[1] = x
         intcodes[2] = y

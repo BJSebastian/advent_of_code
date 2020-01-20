@@ -1,6 +1,6 @@
 //==========================================================================================
-// Advent of Code 2019
-// --- Day 1: The Tyranny of the Rocket Equation ---
+//  Advent of Code 2019
+//  --- Day 1: The Tyranny of the Rocket Equation ---
 //==========================================================================================
 const fs = require('fs') 
 const readline = require('readline')
