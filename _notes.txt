@@ -106,6 +106,9 @@ https://www.pyblog.in/programming/python/binary-tree-data-structure-in-python/
 COUNTING NODES IN A BINARY TREE RECURSIVELY
 http://www.martinbroadhurst.com/counting-nodes-in-a-binary-tree-recursively.html
 
+Permutation and Combination in Python
+https://www.geeksforgeeks.org/permutation-and-combination-in-python/
+
 #-------------------------------------------------------------------------------------------
 #  Javascript
 #-------------------------------------------------------------------------------------------
