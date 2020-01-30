@@ -109,6 +109,9 @@ http://www.martinbroadhurst.com/counting-nodes-in-a-binary-tree-recursively.html
 Permutation and Combination in Python
 https://www.geeksforgeeks.org/permutation-and-combination-in-python/
 
+My Advent of Code (Season 2019) Solutions written in Python
+https://github.com/Dementophobia/advent-of-code-2019
+
 #-------------------------------------------------------------------------------------------
 #  Javascript
 #-------------------------------------------------------------------------------------------
