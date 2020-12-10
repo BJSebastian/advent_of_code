@@ -1,7 +1,8 @@
 const fs = require('fs');
 
 async function readInput() {
-  const input = await fs.promises.readFile('input.txt', 'utf-8');
+  const input = await fs.promises.readFile('sample.txt', 'utf-8');
+  // const input = await fs.promises.readFile('input.txt', 'utf-8');
   return input.split('\n');
 }
 
