@@ -1,15 +1,11 @@
 const fs = require('fs');
-
-async function readInput() {
-  const input = await fs.promises.readFile('sample.txt', 'utf-8');
-  // const input = await fs.promises.readFile('input.txt', 'utf-8');
-  return input.split('\n');
-}
+const inputFilename = "sample.txt";
 
 async function puzzle() {
-  const values = await readInput();
-  values.forEach((row) => {
-    console.log(row);
+  const input = await fs.promises.readFile(inputFilename, 'utf-8');
+  const lines = input.split('\n');
+  lines.forEach((line) => {
+    console.log(line);
   });
 }
 

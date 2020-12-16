@@ -1,3 +1,5 @@
 .DS_Store
 day*__*.py
 input*.txt
+*.bak.js
+*.other.js
