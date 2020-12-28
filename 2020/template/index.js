@@ -10,3 +10,6 @@ async function puzzle() {
 }
 
 puzzle();
+
+// command to run this program:
+// $ node index.js
