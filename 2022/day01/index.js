@@ -31,7 +31,7 @@ async function puzzle() {
 
 	// Part 2... total calories of top 3 elves.
 	const topElves = elfCalories.sort().slice(-3);
-	console.log("Total calories for top 3 elves: " + topElves.reduce((a, b) => a + b, 0));
+	console.log("Total calories for top 3 elves: " + topElves.reduce((sum, cur) => sum + cur, 0));
 }
 
 puzzle();
