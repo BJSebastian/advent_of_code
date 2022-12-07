@@ -21,35 +21,61 @@ async function puzzle() {
 	// 
 	//----------------------------------------------------------------------------------------
 	for (const line of lines) {
-		
-		switch(line.substring(0, 1)) {
+
+		const lineInfo = line.replace("\r", "").split(' ');
+
+		// 	// console.log(lineInfo);
+
+		switch (lineInfo[0]) {
+
 			case "$":
-				const commandInfo = line.substring(2).split(' ');
-				console.log("command: " + line.substring(2));
-				if (line.substring(2) === 'cd ..') {
-					// pop the most recent directory off of the directory stack.
-					dirStack.pop();
+
+				if (lineInfo[1] === 'cd') {
+					if (lineInfo[2] === '..') {
+						dirInfo.push(dirStack[dirStack.length -1]);
+						dirStack.pop();
+					}
+					else {
+						console.log(`creating directory ${lineInfo[2]}`);
+						const newDir = {
+							dir: lineInfo[2],
+							size: 0
+						};
+						dirStack.push(newDir);
+					}
 				}
 				break;
+
 			default:
-				const lineInfo = line.split(' ');
+
 				if (lineInfo[0] === "dir") {
-					const newDir = { dir: lineInfo[1], size: 0 };
-					dirInfo.push(newDir);
-					dirStack.push(newDir)
-					console.log(`- ${lineInfo[1]} (${lineInfo[0]})}`);
-				}
-				else {
+					console.log(`- ${lineInfo[1]} (dir)`);
+				} else {
 					console.log(`- ${lineInfo[1]} (file, size=${lineInfo[0]})}`);
-					for (const dir in dirStack) {
-						dir.size += parseInt(lineInfo[0]);
+
+					for (let i = 0; i < dirStack.length; i++) {
+						dirStack[i].size += parseInt(lineInfo[0]);
 					}
+
 				}
 				break;
 		}
 	}
 
+	for (const dir of dirStack) {
+		dirInfo.push(dir);
+	}
+
 	console.log(dirInfo);
+
+	let totalSize = 0;
+	for (const dir of dirInfo) {
+		if (dir.size <= 100000) {
+			totalSize += dir.size;
+		}
+	}
+
+	console.log(`sum of the total sizes of directories under 100000: ${totalSize}`);
 
 	//----------------------------------------------------------------------------------------
 	// --- Part Two ---
