@@ -1,14 +1,14 @@
 const fs = require('fs');
 
 async function readInput() {
-	const input = fs.readFileSync('sample.txt', 'utf-8');
-	// const input = fs.readFileSync('input.txt', 'utf-8');
+	// const input = fs.readFileSync('sample.txt', 'utf-8');
+	const input = fs.readFileSync('input.txt', 'utf-8');
 	return input.split('\n');
 }
 
 async function puzzle() {
 	//========================================================================================
-	// --- --- Day 7: No Space Left On Device --- ---
+	// --- Day 7: No Space Left On Device --- ---
 	//========================================================================================
 
 	// Get number values into an array.
@@ -69,9 +69,13 @@ async function puzzle() {
 	console.log(dirInfo);
 
 	let totalSize = 0;
+	let outermostDirSize = 0;
 	for (const dir of dirInfo) {
 		if (dir.size <= 100000) {
 			totalSize += dir.size;
+		}
+		if (dir.dir === '/') {
+			outermostDirSize = dir.size;
 		}
 	}
 
@@ -79,9 +83,30 @@ async function puzzle() {
 
 	//----------------------------------------------------------------------------------------
 	// --- Part Two ---
-	// 
+	// Find the smallest directory that, if deleted, would free up enough space on the '
+	// filesystem to run the update.
+	// What is the total size of that directory?
 	//----------------------------------------------------------------------------------------
+	console.log();
+	console.log("Part 2...");
+	console.log("---------");
+	console.log();
+	console.log(`Outermost dir size: ${outermostDirSize}`);
+	const unUsedSpace = 70000000 - outermostDirSize;
+	console.log(`Current size of unused space: ${unUsedSpace}`);
+	const spaceNeeded = 30000000 - unUsedSpace;
+	console.log(`Space needed: ${spaceNeeded}`);
+	let dirSize = 0;
+	for (const dir of dirInfo) {
+		if (dir.size >= spaceNeeded) {
+			console.log(`evaluating ${dir.size}`);
+			if (dirSize === 0 || dir.size < dirSize) {
+				dirSize = dir.size;
+			}
+		}
+	}
 
+	console.log(`total size of directory to delete: ${dirSize}`);
 }
 
 puzzle();
