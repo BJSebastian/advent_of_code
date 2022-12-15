@@ -5,3 +5,4 @@ sample*.txt
 *.bak.js
 *.other.js
 test.js
+help.md
