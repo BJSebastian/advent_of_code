@@ -1,8 +1,2 @@
 .DS_Store
-day*__*.py
-input*.txt
-sample*.txt
-*.bak.js
-*.other.js
-test.js
-help.md
+node_modules
