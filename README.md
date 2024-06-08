@@ -7,6 +7,7 @@ Perhaps **2022** is the year to get them all! My ultimate goal is to do all chal
 [My Polyglot Advent of Code](https://m.signalvnoise.com/my-polyglot-advent-of-code/)
 
 ## Languages used each year (so far)
+
 | Year | Language   | # Days |
 | ---- | ---------- | ------ |
 | 2019 | Python     | 8 😙   |
@@ -15,6 +16,7 @@ Perhaps **2022** is the year to get them all! My ultimate goal is to do all chal
 | 2022 | Javascript | ? 💪   |
 
 ## Links to different Advent Challenges
+
 - [Advent of Code](https://adventofcode.com)
 - [Advent of Javascript](https://www.adventofjs.com)
 - [Advent of CSS](https://www.adventofcss.com)
