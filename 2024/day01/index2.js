@@ -30,7 +30,7 @@ async function puzzle() {
 	for (let i = 0; i < listLeft.length; i++) {
 		const valueLeft = parseInt(listLeft[i]);
 		const found = listRight.filter((element) => parseInt(element) === valueLeft);
-		// fir debugging...
+		// for debugging...
 		// console.log(`for row: ${i} left value: ${valueLeft} appears: ${found.length} in right.`);
 		similarityScore += valueLeft * found.length;
 	}

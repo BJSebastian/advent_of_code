@@ -1,3 +1,5 @@
+// this is the final day 4 part 2 program condensed to a shortened version (from index2.js)
+// using ChatGPT.
 const fs = require("fs");
 
 async function readInput() {
@@ -8,7 +10,6 @@ async function puzzle() {
   const grid = await readInput();
   const charsToCheck = ["A", "M"];
   const data = [];
-  let xmasCount = 0;
 
   const directions = [
     { di: -1, dj: 1, name: "upper right" },
@@ -27,8 +28,6 @@ async function puzzle() {
           if (grid[ni]?.[nj] === char) charsFound++;
         });
         if (charsFound === charsToCheck.length) {
-          xmasCount++;
-          console.log(`${xmasCount}) row: ${i + 1} col: ${j + 1} - a ${name} SAM was found`);
           data.push({ row: i + (di === 1 ? 2 : 0), col: j + (dj === 1 ? 2 : 0) });
         }
       });
@@ -42,10 +41,6 @@ async function puzzle() {
   }, {});
 
   const result = data.map(obj => ({ ...obj, count: counts[JSON.stringify(obj)] }));
-
-  console.log();
-  console.log(result);
-  console.log();
   console.log(`How many times does SAM appear? ${result.filter(x => x.count === 2).length / 2}`);
 }
 

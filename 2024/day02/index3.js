@@ -1,3 +1,5 @@
+// this is the final day 2 part 2 program condensed to a shortened version (from index2.js)
+// using ChatGPT.
 const fs = require('fs');
 
 async function readInput() {
