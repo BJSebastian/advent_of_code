@@ -24,70 +24,57 @@ function isNumber(str) {
 }
 
 function rearrange(disk) {
-  let replaced = false;
-  // console.log(`disk length: ${disk.length}`);
-  const startingDisk = disk.join('');
-  // console.log(`starting disk: ${disk.join('')}`);
   for (let i = disk.length - 1; i >= 0; i--) {
-    // console.log(`looking at right position ${i} with char ${disk[i]}`);
     if (isNumber(disk[i])) {
       for (let j = 0; j < disk.length; j++) {
-        // console.log(`looking at right position ${j} with char ${disk[j]}`);
         if (disk[j] === ".") {
           if (j < i) {
             // swap characters
             const temp = disk[j];
             disk[j] = disk[i];
             disk[i] = temp;
-            // console.log(`swapping ${j} with ${i}... new disk: ${disk.join('')}`);
-            // console.log(` updated disk: ${disk.join('')}`);
-            // console.log(`--------------------`);
           }
         }
       }
     }
   }
-  return disk.join('');
+  return disk;
 }
 
 async function puzzle() {
-	// Get each row into an array.
+	// Push each row into an array.
 	const rows = await readInput();
 	rows.forEach((row) => {
-		// console.log(row);
 		const disk = row.split("");
-		let map = "";
+		let map = [];
     let fileId = 0;
 		for (let i = 0; i < disk.length; i++) {
 			const digit = parseInt(disk[i]);
       if (isOdd(i)) {
         // processing free space
         for (let j = 0; j < digit; j++) {
-          map += ".";
+          map.push(".");
         }
       } else {
         // processing a file
         for (let j = 0; j < digit; j++) {
-          map += fileId;
+          map.push(fileId.toString());
         }
         fileId++;
       }
 		}
-		// console.log(map);
 
     // rearrange
     console.log(`disk map is ${map.length} chars`);
-    const optimized = rearrange(map.split(""));
+    const optimized = rearrange(map);
     console.log(`optimized: ${optimized}`);
-    checkDigits = optimized.split("");
     let checkSum = 0;
-    for (let i = 0; i < checkDigits.length; i++) {
-      if (checkDigits[i] === ".") {
+    for (let i = 0; i < optimized.length; i++) {
+      if (optimized[i] === ".") {
         break;
       }
       else {
-        // console.log(`${i} * ${checkDigits[i]}`);
-        checkSum += i * parseInt(checkDigits[i]); 
+        checkSum += i * parseInt(optimized[i]); 
       }
     }
     console.log(`checksum: ${checkSum}`);
