@@ -1,5 +1,9 @@
 # Advent of Code
 
+## CJ's Private Leaderboard
+
+<https://adventofcode.com/2025/leaderboard/private/view/7150>
+
 This repo contains my Advent of Code solutions over the years. I still have yet to complete all challenges for a given year.
 
 Perhaps **2024** is the year to get them all!
